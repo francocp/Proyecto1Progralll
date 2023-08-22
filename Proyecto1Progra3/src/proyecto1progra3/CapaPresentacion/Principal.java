@@ -32,7 +32,6 @@ public class Principal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         CreateBTN = new javax.swing.JButton();
         GestBTN = new javax.swing.JButton();
-        UpdateBTN = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -63,15 +62,7 @@ public class Principal extends javax.swing.JFrame {
                 GestBTNActionPerformed(evt);
             }
         });
-        jPanel1.add(GestBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 140, 100));
-
-        UpdateBTN.setText("Administrar materias");
-        UpdateBTN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdateBTNActionPerformed(evt);
-            }
-        });
-        jPanel1.add(UpdateBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, 100));
+        jPanel1.add(GestBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 140, 100));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         jMenu1.setText("File");
@@ -133,10 +124,6 @@ public class Principal extends javax.swing.JFrame {
         g.setVisible(true);
     }//GEN-LAST:event_GestBTNActionPerformed
 
-    private void UpdateBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateBTNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_UpdateBTNActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -175,7 +162,6 @@ public class Principal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CreateBTN;
     private javax.swing.JButton GestBTN;
-    private javax.swing.JButton UpdateBTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

@@ -39,7 +39,7 @@ public class Estudiante extends Persona{
         this.FechaIngreso = FechaIngreso;
     }
 
-    public float getPromedio() {
+    public Float  getPromedio() {
         return Promedio;
     }
 

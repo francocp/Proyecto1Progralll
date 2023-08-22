@@ -324,7 +324,7 @@ public class Gestion extends javax.swing.JDialog {
         jPanelProfesores.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 460, 80, -1));
 
         jTextField30.setText("jTextField30");
-        jPanelProfesores.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, -1, -1));
+        jPanelProfesores.add(jTextField30, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 460, 110, -1));
 
         getContentPane().add(jPanelProfesores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 507));
 

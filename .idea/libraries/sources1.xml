@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sources1">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/NetBeans-15/netbeans/enterprise/ant/sources" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/NetBeans-15/netbeans/harness/nbi/stub/ext/components/products/helloworld/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/NetBeans-15/netbeans/harness/nbi/stub/ext/engine/src" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/NetBeans-15/netbeans/java/scripts" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/NetBeans-15/netbeans/java/sources" />
+    </SOURCES>
+  </library>
+</component>

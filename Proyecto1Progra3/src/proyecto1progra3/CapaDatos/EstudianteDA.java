@@ -31,7 +31,7 @@ public class EstudianteDA implements IPersona<Estudiante>
             cs.setString(4, obj.getApellido2()); 
             cs.setInt(5, obj.getEdad());
             cs.setString(6, obj.getFechaIngreso());
-            cs.setString(7, obj.getPromedio());
+            cs.setFloat(7, obj.getPromedio());
             cs.setString(8, obj.getClasesactuales());
             cs.setString(9, obj.getMateriasPasadas());
             cs.setString(10, obj.getDescripcion());
@@ -64,7 +64,7 @@ public class EstudianteDA implements IPersona<Estudiante>
             cs.setString(4, obj.getApellido2()); 
             cs.setInt(5, obj.getEdad());
             cs.setString(6, obj.getFechaIngreso());
-            cs.setString(7, obj.getPromedio());
+            cs.setFloat(7, obj.getPromedio());
             cs.setString(8, obj.getClasesactuales());
             cs.setString(9, obj.getMateriasPasadas());
             cs.setString(10, obj.getDescripcion());

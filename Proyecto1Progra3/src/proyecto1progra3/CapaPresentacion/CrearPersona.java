@@ -6,12 +6,11 @@ package proyecto1progra3.CapaPresentacion;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.util.Objects;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 
 /**
  *
@@ -80,8 +79,8 @@ public class CrearPersona extends javax.swing.JDialog {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jFI = new javax.swing.JTextField();
@@ -235,7 +234,7 @@ public class CrearPersona extends javax.swing.JDialog {
 
         jPanelFondo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/CrearPersona.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(Objects.requireNonNull(getClass().getResource("/proyecto1progra3/Multimedia/CrearPersona.jpg")))); // NOI18N
         jPanelFondo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 550));
 
         jPanelDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -367,11 +366,11 @@ public class CrearPersona extends javax.swing.JDialog {
         jLabel21.setText("Promedio");
         jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, -1, -1));
 
-        jLabel22.setText("Clases actuales");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
-
         jLabel23.setText("Materias pasadas");
         jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 140, -1, -1));
+
+        jLabel22.setText("Clases actuales");
+        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
         jLabel24.setText("Numero");
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, -1, -1));
@@ -614,6 +613,7 @@ public class CrearPersona extends javax.swing.JDialog {
 
     private void jGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGuardarActionPerformed
         // TODO add your handling code here:
+        comprobar(2);
     }//GEN-LAST:event_jGuardarActionPerformed
 
     private void jPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPromedioActionPerformed
@@ -860,7 +860,7 @@ public class CrearPersona extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     private void redimensionar() {
-        ImageIcon icon = new ImageIcon("C:\\Users\\emanu\\OneDrive\\Personal\\Documentos de Microsoft Word\\Documents\\NetBeansProjects\\Proyecto1PrograIII\\Proyecto1PrograIII\\src\\Multimedia\\CrearPersona.jpg");
+        ImageIcon icon = new ImageIcon("C:\\Users\\emanu\\IdeaProjects\\Proyecto1Progralll\\Proyecto1Progra3\\src\\proyecto1progra3\\Multimedia\\CrearPersona.jpg");
 Image image = icon.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_SMOOTH);
 icon = new ImageIcon(image);
 jLabel1.setIcon(icon);
@@ -944,16 +944,98 @@ jLabel1.setIcon(icon);
         }
         comprobarint(jTXages);
         comprobarint(jTXCarne);
-        comprobarint(jTXCarne);
-        if(jFI.getText().equals(nulo)){
-            JOptionPane.showMessageDialog(null, "Parece que el alumno ni se ha matriculado, porque no diste fecha de ingreso, animal");
+        if(jTextField1.getText().equals(nulo)){
+            Unestupidoseequivoco(jLabel1, jTextField1,"El mae no bretea?");
         }
-    } else{
+        if(jTextField2.getText().equals(nulo)){
+            Unestupidoseequivoco(jLabel2,jTextField2,"Y que clases dará el mae?");
+        }
+        if(jTextField3.getText().equals(nulo)) {
+        Unestupidoseequivoco(jLabel3,jTextField3,"El mae nunca ha breteeado?");
+        }
+        if(jTextField4.getText().equals(nulo)){
+            Unestupidoseequivoco(jLabel4,jTextField4,"Que? El mae no habla?");
+        }
+        if(jTextField5.getText().equals(nulo)){
+            Unestupidoseequivoco(jLabel5,jTextField5, "Estamos en la prehistoria?");
+        }
+        if(jTextField6.getText().equals(nulo)){
+            Unestupidoseequivoco(jLabel6,jTextField6, "El mae es Tom Cruise? porque todo el mundo tiene email");
+        }
+        if(jTextField7.getText().equals(nulo) ){
+            Unestupidoseequivoco(jLabel7,jTextField7,"El mae no se ha registrado?");
+        }
+        comprobarint(jTextField3);
+        comprobarint(jTextField5);
+
+
+    }
             if(profeoest ==2){//Seleccionamos que queremos aplicar esto en estudiantes
                 //Poner aqui los errores de estudiantes
+                String nulo = "";
+                if(jTFName.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel3,jTFName, "El primer imbecil qEue no tiene nombre. Revisalo, pedazo");
+                }
+                if(jTFA1.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel4, jTFA1, "Tu primer apellido es como mi novia (no existe). Revisa antes de enviar");
+                }
+                if(jTFA1.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel5, jTXA2, "Tu segundo apellido es como mi novia (no existe). Revisa antes de enviar");
+                }
+                if(jTFDNI.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel8, jTFDNI, "Que? No estas en el registro o que?");
+                }
+                if(jTXages.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel16, jTXages ,"Que? aun estas en el utero de tu mamá?");
+                }
+                comprobarint(jTXages);
+                comprobarint(jTXCarne);
+                if(jFI.getText().equals(nulo)){
+                    JOptionPane.showMessageDialog(null, "Parece que el alumno ni se ha matriculado, porque no diste fecha de ingreso, animal");
+                }
+                if(jPromedio.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel21, jPromedio, "Que? El alumno es tan estúpido como el que está haciendo esto?");
+                }
+                if(jClasesActuales.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel22, jClasesActuales, "Que? El alumno no lleva materias este cuatri?");
+                }
+                if(jMateriasPasadas.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel23, jMateriasPasadas, "Este alumno que? No ha pasado materias?");
+                }
+                if(jNumero.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel24, jNumero, "Este mae vive en la prehistoria o que?");
+
+                }
+                comprobarPromedio(jPromedio);
+                comprobarint(jNumero);
+                if(jCorreo.getText().equals(nulo)){
+                    Unestupidoseequivoco(jLabel25, jCorreo, "Este mae vive en la prehistoria? Porque hoy en dia se usa el correo");
+                }
+                if(jDescripcion.getText().equals(nulo)){
+                    jLabel26.setForeground(new Color(255,0,0));
+                    JOptionPane.showMessageDialog(null, "No veo la descripcion del tipo");
+                }
             }
         }
+
+    private void comprobarPromedio(JTextField jPromedio) {
+    if(isFloat(jPromedio.getText())){
+        System.out.printf("No se ha equivocado");
+    } else {
+        Unestupidoseequivoco(jLabel21,jPromedio,"Que promedio tiene un entero?");
     }
+    }
+
+    private boolean isFloat(String text) {
+        try {
+            Float.parseFloat(text);
+            System.out.println("No se ha equivocado");
+            } catch(NumberFormatException e){
+
+            }
+        return false;
+    }
+
 
     private void Unestupidoseequivoco(JLabel etiqueta, JTextField CasillaEquivocada, String Mensajealestupido) {
         int rojo = 255; int verdeazul = 0;
@@ -964,6 +1046,7 @@ jLabel1.setIcon(icon);
 
     private void EmpezarAlumno() {
         jPanel1.setVisible(true);
+        jComboBox1.setSelectedItem(2);
         jPanelFondo.setVisible(false);
         jProfesor.setVisible(false);
     }
