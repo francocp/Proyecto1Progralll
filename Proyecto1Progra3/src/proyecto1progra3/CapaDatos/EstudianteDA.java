@@ -114,10 +114,14 @@ public class EstudianteDA implements IPersona<Estudiante>
     mdl.addColumn("Primer Apellido");
     mdl.addColumn("Segundo Apellido");
     mdl.addColumn("Edad");
-    mdl.addColumn("Nacionalidad");
-    mdl.addColumn("Correo");
-    mdl.addColumn("Direccion");
-    mdl.addColumn("Carnet");
+    mdl.addColumn("Fecha de ingreso");
+    mdl.addColumn("Promedio");
+    mdl.addColumn("Clases actuales");
+    mdl.addColumn("Materias aprobadas");
+    mdl.addColumn("Descripcion");
+    mdl.addColumn("Numero");
+    mdl.addColumn("Mail");
+
         try {
             CallableStatement cs = cn.prepareCall("{LISTAR_ESTUDIANTE ()}");
             ResultSet rst =cs.executeQuery();
@@ -134,7 +138,7 @@ public class EstudianteDA implements IPersona<Estudiante>
                     rst.getString(8),
                     rst.getString(9),
                     rst.getString(10),
-                    rst.getString(11),
+                    rst.getInt(11),
                     rst.getString(12),
                 };
                 
