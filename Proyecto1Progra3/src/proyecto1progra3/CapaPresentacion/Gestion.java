@@ -11,12 +11,32 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import proyecto1progra3.CapaDatos.ConexionBD;
+import proyecto1progra3.CapaLógica.Estudiante;
+import proyecto1progra3.CapaLógica.Profesores;
 
 /**
  *
  * @author emanu
  */
 public class Gestion extends javax.swing.JDialog {
+Profesores Elg = new Profesores();
+ String Nombre;
+    String Cedula;
+    String Apellido1;
+    String Apellido2;
+        int Edad;
+    String Profesion;
+    String UniDeEgresion;
+    String Clasesimpartidas;
+        String Añosdeexperiencia;  
+        String Idiomas;
+            
+        String Numero;
+        String Correo;
+        String Username;
+        
+    
+    
 
     /**
      * Creates new form Gestion
@@ -29,7 +49,7 @@ public class Gestion extends javax.swing.JDialog {
     }
       public void mostrar(String tabla){
           String sql = "Select * from" + jTableProfesor;
-          Statement st;
+          java.sql.Statement st;
            ConexionBD con = new ConexionBD ();
            Connection ConexionBD = con.getConn();
            DefaultTableModel model =new DefaultTableModel();
@@ -75,26 +95,26 @@ public class Gestion extends javax.swing.JDialog {
           JOptionPane.showMessageDialog(null,"Error" + e.toString() );}     
       }
        public void mostrar1(String tabla){
-          String sql = "Select * from" + jTableProfesor;
-          Statement st;
+          String sql = "Select * from" + jTableestudiantes;
+          java.sql.Statement st;
            ConexionBD con = new ConexionBD ();
            Connection ConexionBD = con.getConn();
            DefaultTableModel model =new DefaultTableModel();
-           model.addColumn("Nombre");
-            model.addColumn("Cedula");
+           model.addColumn("Cedula");
+            model.addColumn("Nombre");
              model.addColumn("Apellido1");
               model.addColumn("Apellido2");
                model.addColumn("Edad");
-                model.addColumn("Profesion");
-                 model.addColumn("UniDeEgresion");
-          model.addColumn("Clases impartidas");
-          model.addColumn("Años de experiencia");
-          model.addColumn("Idiomas");
+                model.addColumn("Fecha de ingreso");
+                 model.addColumn("Promedio");
+          model.addColumn("Clases Actuales");
+          model.addColumn("materias pasadas");
+          model.addColumn("Descripcion");
           model.addColumn("Numero");
           model.addColumn("Correo");
-          model.addColumn("Username");
           
-          jTableProfesor.setModel(model);
+          
+          jTableestudiantes.setModel(model);
           String [] datos = new String[13];
           try{
               st = ConexionBD.createStatement();
@@ -114,8 +134,8 @@ public class Gestion extends javax.swing.JDialog {
                   datos[0]= rs.getString(10);
                   datos[0]= rs.getString(11);
                   datos[0]= rs.getString(12);
-                  datos[0]= rs.getString(13);
-                  datos[0]= rs.getString(14);
+                  
+                  
                  model.addRow(datos);
                  
           }  catch(SQLException e){
@@ -141,7 +161,7 @@ public class Gestion extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        ActualizarBTNprofe = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
@@ -192,11 +212,11 @@ public class Gestion extends javax.swing.JDialog {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnestu = new javax.swing.JButton();
+        eliminarestu = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        TxtCedula = new javax.swing.JTextField();
         jTextField11 = new javax.swing.JTextField();
         jTextField12 = new javax.swing.JTextField();
         jTextField13 = new javax.swing.JTextField();
@@ -297,13 +317,13 @@ public class Gestion extends javax.swing.JDialog {
         jButton2.setText("Eliminar");
         jPanelEdicion.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 433, -1, -1));
 
-        jButton3.setText("Actualizar");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ActualizarBTNprofe.setText("Actualizar");
+        ActualizarBTNprofe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ActualizarBTNprofeActionPerformed(evt);
             }
         });
-        jPanelEdicion.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, -1));
+        jPanelEdicion.add(ActualizarBTNprofe, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 430, -1, -1));
 
         jTextField1.setText("jTextField1");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -479,16 +499,21 @@ public class Gestion extends javax.swing.JDialog {
         jLabel24.setText("Número telefónico");
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
-        jButton4.setText("Actualizar");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnestu.setText("Actualizar");
+        btnestu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnestuActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
+        jPanel1.add(btnestu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
-        jButton5.setText("Eliminar");
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
+        eliminarestu.setText("Eliminar");
+        eliminarestu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarestuActionPerformed(evt);
+            }
+        });
+        jPanel1.add(eliminarestu, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, -1, -1));
 
         jButton6.setText("Cambiar vista");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -501,8 +526,8 @@ public class Gestion extends javax.swing.JDialog {
         jTextField9.setText("jTextField9");
         jPanel1.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 120, -1));
 
-        jTextField10.setText("jTextField10");
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 120, -1));
+        TxtCedula.setText("jTextField10");
+        jPanel1.add(TxtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 120, -1));
 
         jTextField11.setText("jTextField11");
         jPanel1.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 120, -1));
@@ -570,6 +595,11 @@ public class Gestion extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableestudiantes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableestudiantesMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTableestudiantes);
 
         jPanelEstudiantes.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 630, -1));
@@ -628,13 +658,24 @@ public class Gestion extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ActualizarBTNprofeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarBTNprofeActionPerformed
      mostrar("jTableProfesor");
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ActualizarBTNprofeActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnestuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnestuActionPerformed
+       
+         mostrar1("jTableestudiantes");
+    }//GEN-LAST:event_btnestuActionPerformed
+
+    private void jTableestudiantesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableestudiantesMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_jTableestudiantesMouseClicked
+
+    private void eliminarestuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarestuActionPerformed
+ Elg.Eliminar(TxtCedula.getText());
+     limpiarDataAlumno();
+     showTable();        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarestuActionPerformed
 
     /**
      * @param args the command line arguments
@@ -679,12 +720,13 @@ public class Gestion extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ActualizarBTNprofe;
     private javax.swing.JTable TableEstudiantes;
+    private javax.swing.JTextField TxtCedula;
+    private javax.swing.JButton btnestu;
+    private javax.swing.JButton eliminarestu;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
@@ -739,7 +781,6 @@ public class Gestion extends javax.swing.JDialog {
     private javax.swing.JTable jTableestudiantes;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
@@ -784,7 +825,7 @@ public class Gestion extends javax.swing.JDialog {
         jTextField3.setText("");
         jTextField4.setText("");
        jTextField9.setText("");
-       jTextField10.setText("");
+       TxtCedula.setText("");
        jTextField11.setText("");
        jTextField12.setText("");
        jTextField13.setText("");
@@ -805,6 +846,14 @@ public class Gestion extends javax.swing.JDialog {
        jTextField28.setText("");
        jTextField29.setText("");
        jTextField30.setText("");
+    }
+
+    private void limpiarDataAlumno() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private void showTable() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
