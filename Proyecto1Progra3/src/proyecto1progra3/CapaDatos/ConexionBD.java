@@ -6,6 +6,7 @@ package proyecto1progra3.CapaDatos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,7 +35,7 @@ public class ConexionBD {
     {
         try {
             con =  DriverManager.getConnection(url,usuario,password);
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("Error al conectarnos a la base de datos");
             con = null;
         }
