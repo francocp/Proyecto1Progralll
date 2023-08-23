@@ -139,4 +139,12 @@ public class Profesores extends Persona {
             setUsername(campo);
         }
     }
+
+    public void Eliminar(String text) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void Agregar(String text, String text0, String text1, String text2, String text3, int parseInt, String text4, String text5, int parseInt0, String text6, String text7, String text8, String text9) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
