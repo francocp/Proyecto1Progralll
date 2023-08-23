@@ -45,7 +45,7 @@ public class ProfesorDA {
               
               
         } catch (Exception e) {
-            System.out.println("Error al insertar estudiante");
+            System.out.println("Error al insertar profesor");
         }
             
       
@@ -107,15 +107,19 @@ public class ProfesorDA {
 
     public DefaultTableModel Lista() {
     DefaultTableModel mdl= new DefaultTableModel();
-    mdl.addColumn("Cedula");
-    mdl.addColumn("Nombre");
-    mdl.addColumn("Primer Apellido");
-    mdl.addColumn("Segundo Apellido");
-    mdl.addColumn("Edad");
-    mdl.addColumn("Nacionalidad");
-    mdl.addColumn("Correo");
-    mdl.addColumn("Direccion");
-    mdl.addColumn("Carnet");
+    mdl.addColumn("Cedula ");
+    mdl.addColumn("Nombre ");
+    mdl.addColumn("Primer Apellido ");
+    mdl.addColumn("Segundo Apellido ");
+    mdl.addColumn("Edad ");
+    mdl.addColumn("Profesion ");
+    mdl.addColumn("Universidad de egresion ");
+    mdl.addColumn("Clases impartidas ");
+    mdl.addColumn("Años de experiencia ");
+    mdl.addColumn("Idiomas ");
+    mdl.addColumn("Numero ");
+    mdl.addColumn("Correo ");
+    mdl.addColumn("Username ");
         try {
             CallableStatement cs = cn.prepareCall("{LISTAR_ESTUDIANTE ()}");
             ResultSet rst =cs.executeQuery();
@@ -130,10 +134,11 @@ public class ProfesorDA {
                     rst.getString(6),
                     rst.getString(7),
                     rst.getString(8),
-                    rst.getString(9),
+                    rst.getInt(9),
                     rst.getString(10),
                     rst.getString(11),
                     rst.getString(12),
+                    rst.getString(13),
                 };
                 
                 mdl.addRow(data);
