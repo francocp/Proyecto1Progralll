@@ -10,22 +10,22 @@ package proyecto1progra3.CapaLógica;
  */
 public class Estudiante extends Persona{
     public String FechaIngreso = "";
-    public float Promedio =0;
+    public int Promedio =0;
     String clasesactuales;
     String MateriasPasadas;
     String Descripcion = "";
     int numero = 0;
     String mails = "";
 
-    public Estudiante(String clasesactuales, String MateriasPasadas, String nombre, int Cedula, int carnet, String A1, String A2, int edad, float Promedio, String Descripcion, int Numero, String Correo) {
-        super(nombre, Cedula, carnet, A1, A2, edad);
+    public Estudiante(String des,int Numero, int Promedio, String Correol, String FechaIngreso, String clasesactuales, String MateriasPasadas, int Cedula, int CarnetEstudiante, String Nombre, int Edad, String A1, String A2) {
+        super(Nombre, Cedula, CarnetEstudiante, A1, A2, Edad);
         this.clasesactuales = clasesactuales;
         this.MateriasPasadas = MateriasPasadas;
         this.numero = Numero;
         this.FechaIngreso = FechaIngreso;
         this.Promedio = Promedio;
-        this.Descripcion = Descripcion;
-        this.mails = Correo;
+        this.Descripcion = des;
+        this.mails = Correol;
     }
 
 
@@ -39,11 +39,11 @@ public class Estudiante extends Persona{
         this.FechaIngreso = FechaIngreso;
     }
 
-    public Float  getPromedio() {
+    public int  getPromedio() {
         return Promedio;
     }
 
-    public void setPromedio(float Promedio) {
+    public void setPromedio(int Promedio) {
         this.Promedio = Promedio;
     }
 

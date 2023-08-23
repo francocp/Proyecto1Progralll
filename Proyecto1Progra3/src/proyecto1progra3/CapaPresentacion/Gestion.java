@@ -6,17 +6,19 @@ package proyecto1progra3.CapaPresentacion;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Connection;
-import com.mysql.cj.xdevapi.Statement;
+import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import proyecto1progra3.CapaDatos.ConexionBD;
+import proyecto1progra3.CapaLógica.*;
 
 /**
  *
  * @author emanu
  */
-public class Gestion extends javax.swing.JDialog {
+public class Gestion<Statement> extends javax.swing.JDialog {
+    StLog es = new StLog();
 
     /**
      * Creates new form Gestion
@@ -29,7 +31,7 @@ public class Gestion extends javax.swing.JDialog {
     }
       public void mostrar(String tabla){
           String sql = "Select * from" + jTableProfesor;
-          Statement st;
+          java.sql.Statement st;
            ConexionBD con = new ConexionBD ();
            Connection ConexionBD = con.getConn();
            DefaultTableModel model =new DefaultTableModel();
@@ -50,7 +52,7 @@ public class Gestion extends javax.swing.JDialog {
           jTableProfesor.setModel(model);
           String [] datos = new String[13];
           try{
-              st = ConexionBD.createStatement();
+              st =  ConexionBD.createStatement();
               ResultSet rs = st.executeQuery(sql);
               
               while(rs.next())
@@ -76,7 +78,7 @@ public class Gestion extends javax.swing.JDialog {
       }
        public void mostrar1(String tabla){
           String sql = "Select * from" + jTableProfesor;
-          Statement st;
+          java.sql.Statement st;
            ConexionBD con = new ConexionBD ();
            Connection ConexionBD = con.getConn();
            DefaultTableModel model =new DefaultTableModel();
@@ -774,8 +776,9 @@ public class Gestion extends javax.swing.JDialog {
         panel.setVisible(siono);
     }
 
-    private void CargardatosBasedeDatos() {
+    public void CargardatosBasedeDatos() {
         //Franco o Harold, este método trae los datos de la base de datos. La idea es que, cuando yo seleccione Profesor, esa tabla obtenga los datos de la base de datos
+       jTableProfesor.setModel(es.Lista());
     }
 
     private void QuitarFields() {

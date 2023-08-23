@@ -11,13 +11,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+import proyecto1progra3.CapaLógica.StLog;
 
 /**
  *
  * @author emanu
  */
 public class CrearPersona extends javax.swing.JDialog {
-
+StLog Alg = new StLog();
     /**
      * Creates new form CrearPersona
      */
@@ -614,6 +615,7 @@ public class CrearPersona extends javax.swing.JDialog {
     private void jGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGuardarActionPerformed
         // TODO add your handling code here:
         comprobar(2);
+        guardar();
     }//GEN-LAST:event_jGuardarActionPerformed
 
     private void jPromedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPromedioActionPerformed
@@ -874,6 +876,9 @@ jLabel1.setIcon(icon);
 
     private void guardar() {
         //Franco o Harold, no sé quien va a hacer el Backend, pero aqui va el método que guarda los datos a la base de datos.
+        Alg.Agregar(jFI.getText(),jClasesActuales.getText(),jMateriasPasadas.getText(),Integer.parseInt(jTXCarne.getText()) , Integer.parseInt(jTFDNI.getText()), jTFName.getText(), jTFA1.getText(), jTXA2.getText(), Integer.parseInt(jTXages.getText()), jCorreo.getText(),Integer.parseInt(jPromedio.getText()), jDescripcion.getText(), Integer.parseInt(jNumero.getText()));
+         Gestion g = new Gestion(null, true);
+         g.CargardatosBasedeDatos();
         
     }
 
@@ -1019,7 +1024,7 @@ jLabel1.setIcon(icon);
         }
 
     private void comprobarPromedio(JTextField jPromedio) {
-    if(isFloat(jPromedio.getText())){
+    if(isNumeric(jPromedio.getText())){
         System.out.printf("No se ha equivocado");
     } else {
         Unestupidoseequivoco(jLabel21,jPromedio,"digite correctamente el promedio");
