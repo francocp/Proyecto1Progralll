@@ -137,7 +137,7 @@ public class Gestion extends javax.swing.JDialog {
         jLabel1.setBackground(new java.awt.Color(255, 255, 0));
         jLabel1.setFont(new java.awt.Font("Quicksand", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("¿Que tabla queres ver?");
+        jLabel1.setText("¿Que tabla desea ver?");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona lo que queres ver", "Profesores", "Alumnos" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -155,7 +155,7 @@ public class Gestion extends javax.swing.JDialog {
                 .addGroup(jPanelGestorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelGestorLayout.setVerticalGroup(
             jPanelGestorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
