@@ -881,27 +881,27 @@ jLabel1.setIcon(icon);
         if(jComboBox1.getSelectedIndex() == 1 ){
             empezarProfesor();
             setTitle("Hola, " + jTFName.getText()+ ". Termine de configurar su perfil");
-            mensajesfields(jTextField1, "A que se dedica eeste profe?");
+            mensajesfields(jTextField1, "¿A que se dedica este profesor?");
             jComboBox2.setSelectedIndex(0);
-            mensajesfields(jTextField2, "Que clases dara eeste profe?");
+            mensajesfields(jTextField2, "¿Que clases impartira este profesor?");
             mensajesfields(jTextField3, "Cuantos años lleva laburando?");
-            mensajesfields(jTextField4, "이 선생님은 한국어를 아십니까?");
-            mensajesfields(jTextField5, "El +506 del profe");
-            mensajesfields(jTextField6, "Cual es el @ulatina.net del profe");
+            mensajesfields(jTextField4, "Idiomas");
+            mensajesfields(jTextField5, "Numero del profe");
+            mensajesfields(jTextField6, "El @ulatina.net del profesor");
             mensajesfields(jTextField7, "El Username (Nombre de Usuario)");
         }
         if(jComboBox1.getSelectedIndex() ==0){
-            JOptionPane.showMessageDialog(null,"Ah, excelente. Un estúpido que selecciona la opción que nos es");
+            JOptionPane.showMessageDialog(null,"Seleccione una opcion");
         }
         if(jComboBox1.getSelectedIndex()==2){
             EmpezarAlumno();
-            mensajesfields(jFI, "Aqui va la fecha de ingreso");
+            mensajesfields(jFI, "Fecha de ingreso");
             mensajesfields(jPromedio, "Promedio del estudiante");
             mensajesfields(jClasesActuales, "Clases que lleva");
             mensajesfields(jMateriasPasadas, "Materias con promedio +70");
             mensajesfields(jNumero, "Numero telefonico");
             mensajesfields(jCorreo, "Correo personal del estudiante");
-            jDescripcion.setText("Aqui dice que el estudiante es negro");
+            jDescripcion.setText(" ");
             jDescripcion.setForeground(Color.BLUE);
 
             
@@ -945,16 +945,16 @@ jLabel1.setIcon(icon);
         comprobarint(jTXages);
         comprobarint(jTXCarne);
         if(jTextField1.getText().equals(nulo)){
-            Unestupidoseequivoco(jLabel1, jTextField1,"El mae no bretea?");
+            Unestupidoseequivoco(jLabel1, jTextField1,"Digite una opcion de trabajo");
         }
         if(jTextField2.getText().equals(nulo)){
-            Unestupidoseequivoco(jLabel2,jTextField2,"Y que clases dará el mae?");
+            Unestupidoseequivoco(jLabel2,jTextField2,"Digite una opcion de clases");
         }
         if(jTextField3.getText().equals(nulo)) {
-        Unestupidoseequivoco(jLabel3,jTextField3,"El mae nunca ha breteeado?");
+        Unestupidoseequivoco(jLabel3,jTextField3,"Digite una opcion de trabajo anterior");
         }
         if(jTextField4.getText().equals(nulo)){
-            Unestupidoseequivoco(jLabel4,jTextField4,"Que? El mae no habla?");
+            Unestupidoseequivoco(jLabel4,jTextField4,"Digite una opcion de idiomas");
         }
         if(jTextField5.getText().equals(nulo)){
             Unestupidoseequivoco(jLabel5,jTextField5, "Estamos en la prehistoria?");
@@ -1022,7 +1022,7 @@ jLabel1.setIcon(icon);
     if(isFloat(jPromedio.getText())){
         System.out.printf("No se ha equivocado");
     } else {
-        Unestupidoseequivoco(jLabel21,jPromedio,"Que promedio tiene un entero?");
+        Unestupidoseequivoco(jLabel21,jPromedio,"digite correctamente el promedio");
     }
     }
 
@@ -1057,7 +1057,7 @@ jLabel1.setIcon(icon);
             
         }
         else{
-            JOptionPane.showMessageDialog(null, "No sabia que "+mensajeacomprobar.getText()+" era un numero, pero bueno. Talvez y lo corregis, animal");
+            JOptionPane.showMessageDialog(null, "Digite correctamente los daros"+mensajeacomprobar.getText());
         }
     }
     public static boolean isNumeric(String str) {//Comprobamos si un dato ingresado es entero
@@ -1071,11 +1071,11 @@ jLabel1.setIcon(icon);
 
     private void Empezar() {
         mensajesfields(jTFName, "Digite su nombre");
-        mensajesfields(jTFA1, "Digita tu primer apellido");
-        mensajesfields(jTXA2, "Segundo apéllido aqui");
-        mensajesfields(jTXages, "Tu vejez, digo, edad");
-        mensajesfields(jTXCarne, "Tu carne universitario");
-        mensajesfields(jTFDNI, "Tu cedula");
+        mensajesfields(jTFA1, "Digita su primer apellido");
+        mensajesfields(jTXA2, "Digita su segundo apellido");
+        mensajesfields(jTXages, "Su edad");
+        mensajesfields(jTXCarne, "Su carne universitario");
+        mensajesfields(jTFDNI, "Su cedula");
     }
 
   

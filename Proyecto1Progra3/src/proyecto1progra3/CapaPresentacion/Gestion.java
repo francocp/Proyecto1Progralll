@@ -467,7 +467,7 @@ public class Gestion extends javax.swing.JDialog {
         // TODO add your handling code here:
         if(jComboBox1.getSelectedIndex() ==0)
         {
-            JOptionPane.showMessageDialog(null, "No ves que tenes que seleccionar un lemento de la lista?");
+            JOptionPane.showMessageDialog(null, "Seleccione un elemento de la lista");
         }
         if(jComboBox1.getSelectedIndex() == 1){
            QuitarLabelfondo(jPanelProfesores , true); 
