@@ -23,7 +23,7 @@ public class ProfesorDA {
          boolean band = false;
         try {
            
-            CallableStatement cs = cn.prepareCall("{AGREGAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            CallableStatement cs = cn.prepareCall("{AGREGAR_PROFESORES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             cs.setString(2, obj.getNombre());
             cs.setInt(1, obj.getCedula());
             cs.setString(3, obj.getApellido());
@@ -56,7 +56,7 @@ public class ProfesorDA {
         boolean band = false;
         try {
            
-            CallableStatement cs = cn.prepareCall("{ACTUALIZAR_ESTUDIANTE(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
+            CallableStatement cs = cn.prepareCall("{ACTUALIZAR_PROFESORES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             cs.setInt(1, obj.getCedula());
             cs.setString(2, obj.getNombre());
             cs.setString(3, obj.getApellido());
@@ -89,7 +89,7 @@ public class ProfesorDA {
        boolean band = false;
         try {
            
-            CallableStatement cs = cn.prepareCall("{ELIMINAR_ESTUDIANTE(?)}");
+            CallableStatement cs = cn.prepareCall("{ELIMINAR_PROFESORES(?)}");
             cs.setString(1, codigo);
             
             
@@ -121,7 +121,7 @@ public class ProfesorDA {
     mdl.addColumn("Correo ");
     mdl.addColumn("Username ");
         try {
-            CallableStatement cs = cn.prepareCall("{LISTAR_ESTUDIANTE ()}");
+            CallableStatement cs = cn.prepareCall("{LISTAR_PROFESORES ()}");
             ResultSet rst =cs.executeQuery();
             
             while (rst.next()) {
