@@ -18,8 +18,8 @@ public class ConexionBD {
     
     private static String driver = "com.mysql.cj.jdbc.Driver";
     private static String usuario = "root";
-    private static String password = "franco1099@";
-    private static String url = "jdbc:mysql://localhost:3306/bduniversidad?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    private static String password = "franco1099";
+    private static String url = "jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=CONVERT_TO_NULL";
     
     static
     {
