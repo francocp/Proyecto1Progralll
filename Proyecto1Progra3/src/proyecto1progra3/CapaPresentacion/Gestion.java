@@ -777,15 +777,14 @@ public class Gestion<Statement> extends javax.swing.JDialog {
     }
 
     public void CargardatosBasedeDatos() {
-        //Franco o Harold, este método trae los datos de la base de datos. La idea es que, cuando yo seleccione Profesor, esa tabla obtenga los datos de la base de datos
        jTableProfesor.setModel(es.Lista());
     }
 
     private void QuitarFields() {
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
+       jTextField1.setText("");
+       jTextField2.setText("");
+       jTextField3.setText("");
+       jTextField4.setText("");
        jTextField9.setText("");
        jTextField10.setText("");
        jTextField11.setText("");
