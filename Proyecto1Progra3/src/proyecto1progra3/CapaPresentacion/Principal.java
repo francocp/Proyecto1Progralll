@@ -44,17 +44,17 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        CreateBTN.setBackground(new java.awt.Color(0, 0, 29));
-        CreateBTN.setFont(new java.awt.Font("Segoe Print", 0, 14)); // NOI18N
-        CreateBTN.setText("Crear ➕");
+        CreateBTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        CreateBTN.setText("Crear ");
         CreateBTN.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         CreateBTN.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreateBTNActionPerformed(evt);
             }
         });
-        jPanel1.add(CreateBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 140, 100));
+        jPanel1.add(CreateBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 140, 100));
 
+        GestBTN.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         GestBTN.setText("Gestionar");
         GestBTN.setPreferredSize(new java.awt.Dimension(72, 23));
         GestBTN.addActionListener(new java.awt.event.ActionListener() {
@@ -62,7 +62,11 @@ public class Principal extends javax.swing.JFrame {
                 GestBTNActionPerformed(evt);
             }
         });
-        jPanel1.add(GestBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 140, 100));
+        jPanel1.add(GestBTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 140, 100));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setFocusable(false);
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
         jMenu1.setText("File");
