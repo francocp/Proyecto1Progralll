@@ -50,8 +50,8 @@ public class Gestion extends javax.swing.JDialog {
           jTableProfesor.setModel(model);
           String [] datos = new String[13];
           try{
-                st = ConexionBD.createStatement();
-              
+              st = ConexionBD.createStatement();
+              ResultSet rs = st.executeQuery(sql);
               
               while(rs.next())
                   datos[0]= rs.getString(0);
@@ -163,8 +163,8 @@ public class Gestion extends javax.swing.JDialog {
         jLabel25 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TableEstudiantes = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -431,6 +431,11 @@ public class Gestion extends javax.swing.JDialog {
         jPanel1.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
         jButton4.setText("Actualizar");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, -1, -1));
 
         jButton5.setText("Eliminar");
@@ -491,7 +496,7 @@ public class Gestion extends javax.swing.JDialog {
 
         jPanelEstudiantes.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, 420, 500));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TableEstudiantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -499,12 +504,12 @@ public class Gestion extends javax.swing.JDialog {
                 {null, null, null, null}
             },
             new String [] {
-                "Nombre", "Cedula", "Carnet", "Primer Apellido","Segundo Apellido", "Edad","Fecha de ingreso","Promedio","Clases Actuales", "Materias Pasadas", "Descripcion", "numero", "Mail"
+                "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TableEstudiantes);
 
-        jPanelEstudiantes.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 610, 420));
+        jPanelEstudiantes.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 620, -1));
 
         getContentPane().add(jPanelEstudiantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -564,6 +569,10 @@ public class Gestion extends javax.swing.JDialog {
      mostrar("jTableProfesor");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -607,6 +616,7 @@ public class Gestion extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TableEstudiantes;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -658,10 +668,9 @@ public class Gestion extends javax.swing.JDialog {
     private javax.swing.JPanel jPanelFondo;
     private javax.swing.JPanel jPanelGestor;
     private javax.swing.JPanel jPanelProfesores;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTableProfesor;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextField jTextField1;
